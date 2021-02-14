@@ -1,7 +1,7 @@
 logger=dofile("logger.lua")
 config=dofile("config.lua")
 ua_utils=dofile("uart.lua")
---api=dofile("api.lua")
+api=dofile("api.lua")
 print('soft start ....')
 -- init gpio
 pin=4
@@ -26,26 +26,14 @@ uTmr:register(1000, tmr.ALARM_AUTO, function (t)
         t:unregister()
         ip=wifi.sta.getip()
         print("connected,Ip is :"..wifi.sta.getip())
-        gpio.write(pin,1) 
+        gpio.write(pin,1)
+        --sync time
+        api.syncSntp() 
         ua_utils.run(ip)
     end
 
 end)
 uTmr:start()
-
-
---tmr.alarm(1,1000,1,function()
---    flash(pin)
---    if wifi.sta.getip() == nil then
---        print("connecting...")
---    else tmr.stop(1)
---        ip=wifi.sta.getip()
---        print("connected,Ip is :"..wifi.sta.getip())
---        gpio.write(pin,1) 
---        ua_utils.run(ip)
---    end
---end)
-
 
 
 

@@ -5,21 +5,57 @@ api.key='SdLPuilrOC2nzwIR6'
 api.city='Hangzhou'
 api.language='en'
 api.host='http://api.seniverse.com/v3/weather/now.json?'
--- json result:200    {"results":[{"location":{"id":"WTMKQ069CCJ7","name":"Hangzhou","country":"CN","path":"Hangzhou,Hangzhou,Zhejiang,China","timezone":"Asia/Shanghai","timezone_offset":"+08:00"},"now":{"text":"Cloudy","code":"4","temperature":"12"},"last_update":"2021-02-13T21:40:00+08:00"}]}
+api.sntp='203.107.6.88'
+api.sim_time='%04d-%d-%d'
+api.full_time='%04d/%02d/%02d %02d:%02d:%02d'
+
+
 
 -- get weather
-function getW()
+function api.getW()
 local url=api.host..'key='..api.key..'&location='..api.city
-print('start api')
 http.get(url, nil, function(code,data)
     if (code < 0) then
-      print("HTTP request failed")
+      uart.write(0,'page main',0xff,0xff,0xff)
     else
       local res=sjson.decode(data)
-      print(res.results[1].location.name)
-      --uart.write(0,'t0.txt="'..res.results[1].location.name..'"',0xff,0xff,0xff)
+      uart.write(0,'t1.txt="'..res.results[1].location.name..'"',0xff,0xff,0xff)
+      uart.write(0,'t2.txt="'..res.results[1].now.text..'"',0xff,0xff,0xff)
+      uart.write(0,'t3.txt="'..res.results[1].now.temperature..'"',0xff,0xff,0xff)
+      uart.write(0,'t4.txt="'..res.results[1].last_update..'"',0xff,0xff,0xff)
     end
   end)
 end
+
+
+
+
+function api.syncSntp()
+    sntp.sync(api.sntp)
+end
+
+-- get simple time example 2021-2-14
+function api.getSimTime()
+    sec,usec,rate=rtctime.get()
+    time = rtctime.epoch2cal(sec+28800,usec,rate)
+    print(string.format(api.sim_time, 
+                        time["year"], 
+                        time["mon"], 
+                        time["day"], 
+                        time["hour"] , 
+                        time["min"], 
+                        time["sec"]))
+end
+
+-- get fullTime
+function api.getFullTime()
+    sec,usec,rate=rtctime.get()
+    time = rtctime.epoch2cal(sec+28800,usec,rate)
+    return string.format(api.full_time,time["year"],time["mon"],time["day"],time["hour"], 
+                        time["min"], 
+                        time["sec"])
+end
+
+
 
 return api

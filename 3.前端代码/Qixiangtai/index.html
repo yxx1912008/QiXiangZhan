@@ -1,7 +1,7 @@
 <!--
  * @Author: yuanxx
  * @Date: 2021-02-11 22:12:39
- * @LastEditTime: 2021-02-14 01:07:19
+ * @LastEditTime: 2021-02-14 11:13:50
  * @Description: 
 -->
 <!DOCTYPE html>
@@ -39,10 +39,12 @@
         height: 180px;
         background-color: rgba(0, 0, 0, 0.6);
         border-radius: 1%;
-        /* opacity: 1;
-        color: white; */
-        opacity: .5;
-        color: blue;
+        /* 未选中 */
+        opacity: 1;
+        color: white;
+        /* 选中 */
+        /* opacity: .5;
+        color: blue; */
 
       }
     </style>
@@ -50,8 +52,9 @@
     <div class="container d-flex justify-content-center" id="my-app">
       <div class="mask-container align-self-center">
         <div class="row">
+
           <!-- 图标IP地址 -->
-          <div class="col-3 offset-1 mt-2">
+          <div class="col-3 ml-5 mt-2">
             <div class="row">
               <img src="img/ip.png" style="width: 52px; height: 52px" alt="" />
             </div>
@@ -75,6 +78,25 @@
             </div>
           </div>
           <!-- end -->
+
+
+          
+          <!-- 图标 设置 -->
+          <div class="col-3 mt-2">
+            <div class="row">
+              <img
+                src="img/setting.png"
+                style="width: 52px; height: 52px"
+                alt=""
+              />
+            </div>
+            <div class="row text-center">
+              <span style="width: 70%">设置</span>
+            </div>
+          </div>
+          <!-- end -->
+
+
         </div>
         <div class="row offset-1"></div>
       </div>

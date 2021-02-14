@@ -1,0 +1,73 @@
+<!--
+ * @Author: yuanxx
+ * @Date: 2021-02-11 22:12:39
+ * @LastEditTime: 2021-02-14 12:20:41
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>万年历</title>
+		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.js" type="text/javascript"
+		 charset="utf-8"></script>
+		<script src="https://cdn.bootcdn.net/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.js"></script>
+		<link rel="stylesheet" type="text/css" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.css" />
+	</head>
+	<body>
+		<style type="text/css">
+			.container {
+				width: 320px;
+				height: 240px;
+				background: url(img/bg-jj.jpg);
+			}
+
+			.mask-container {
+				width: 280px;
+				height: 180px;
+				background-color: rgba(0, 0, 0, 0.4);
+				border-radius: 1%;
+				/* 未选中 */
+				opacity: 1;
+				color: white;
+				/* 选中 */
+				/* opacity: .5;
+        color: blue; */
+
+			}
+		</style>
+
+		<div class="container d-flex justify-content-center" id="my-app">
+			<div class="mask-container align-self-center">
+				<div class="row">
+
+
+				</div>
+				<div class="row offset-1"></div>
+			</div>
+		</div>
+
+		<button type="button" class="button btn btn-primary">点我</button>
+
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$(".button").on("click", function(event) {
+					event.preventDefault();
+					html2canvas(document.getElementById("my-app"), {
+						allowTaint: true,
+						taintTest: false,
+						onrendered: function(canvas) {
+							canvas.id = "mycanvas";
+							//生成base64图片数据
+							var dataUrl = canvas.toDataURL();
+							var newImg = document.createElement("img");
+							newImg.src = dataUrl;
+							document.body.appendChild(newImg);
+						},
+					});
+				});
+			});
+		</script>
+	</body>
+</html>
