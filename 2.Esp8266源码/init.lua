@@ -1,6 +1,3 @@
---tmr.alarm(2,3000,0,function()
---    dofile("start.lua")
---end)
 local initTmr = tmr.create()
 initTmr:register(5000, tmr.ALARM_AUTO, function (t) 
 dofile("start.lua")

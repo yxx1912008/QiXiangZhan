@@ -1,7 +1,7 @@
 <!--
  * @Author: yuanxx
  * @Date: 2021-02-11 22:12:39
- * @LastEditTime: 2021-02-14 11:13:50
+ * @LastEditTime: 2021-02-14 18:47:02
  * @Description: 
 -->
 <!DOCTYPE html>
@@ -40,32 +40,19 @@
         background-color: rgba(0, 0, 0, 0.6);
         border-radius: 1%;
         /* 未选中 */
-        opacity: 1;
-        color: white;
+    /*   opacity: 1;
+        color: white; */
         /* 选中 */
-        /* opacity: .5;
-        color: blue; */
-
+              opacity: .5;
+        color: blue;
       }
     </style>
 
     <div class="container d-flex justify-content-center" id="my-app">
       <div class="mask-container align-self-center">
         <div class="row">
-
-          <!-- 图标IP地址 -->
+          <!-- 图标 天气-->
           <div class="col-3 ml-5 mt-2">
-            <div class="row">
-              <img src="img/ip.png" style="width: 52px; height: 52px" alt="" />
-            </div>
-            <div class="row text-center">
-              <span>IP地址</span>
-            </div>
-          </div>
-          <!-- end -->
-
-          <!-- 图标 天气 -->
-          <div class="col-3 mt-2">
             <div class="row">
               <img
                 src="img/weather.png"
@@ -79,10 +66,55 @@
           </div>
           <!-- end -->
 
-
-          
-          <!-- 图标 设置 -->
+          <!-- 图标  名言-->
           <div class="col-3 mt-2">
+            <div class="row">
+              <img src="img/my.png" style="width: 52px; height: 52px" alt="" />
+            </div>
+            <div class="row text-center">
+              <span style="width: 70%">名言</span>
+            </div>
+          </div>
+          <!-- end -->
+
+          <!-- 图标 万年历 -->
+          <div class="col-3 mt-2">
+            <div class="row">
+              <img src="img/rl.png" style="width: 52px; height: 52px" alt="" />
+            </div>
+            <div class="row text-center">
+              <span style="width: 70%">万年历</span>
+            </div>
+          </div>
+          <!-- end -->
+        </div>
+        <div class="row ml-4">
+			
+			<!-- 图标 知乎 -->
+			<div class="col-3 mt-2 ml-2">
+			  <div class="row">
+			    <img src="img/zh.png" style="width: 52px; height: 52px" alt="" />
+			  </div>
+			  <div class="row text-center " >
+			    <span style="width: 80%;">知乎</span>
+			  </div>
+			</div>
+			<!-- end -->
+			
+			
+          <!-- 图标 IP地址 -->
+          <div class="col-3 mt-2 ml-3">
+            <div class="row">
+              <img src="img/ip.png" style="width: 52px; height: 52px" alt="" />
+            </div>
+            <div class="row text-center">
+              <span>IP地址</span>
+            </div>
+          </div>
+          <!-- end -->
+
+          <!-- 图标 设置 -->
+          <div class="col-3 mt-2 ml-2">
             <div class="row">
               <img
                 src="img/setting.png"
@@ -95,10 +127,9 @@
             </div>
           </div>
           <!-- end -->
-
-
+	 
+		
         </div>
-        <div class="row offset-1"></div>
       </div>
     </div>
 

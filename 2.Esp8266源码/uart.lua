@@ -10,20 +10,48 @@ if data == "init$" then
     uart.write(0,'tm0.en=0',0xff,0xff,0xff)
     uart.write(0,'page inok',0xff,0xff,0xff)      
     uart.write(0,'t4.txt="'..tm..'"',0xff,0xff,0xff)
-end
+elseif
 
 -- return project connect ip info 
-if data == "ip$" then
+ data == "ip$" then
     uart.write(0,'t1.txt="'..ip..'"',0xff,0xff,0xff)
     uart.write(0,'tm1.en=0',0xff,0xff,0xff)
-end
+
 
 -- return weather
-if data == "weather$" then
+elseif data == "weather$" then
     api.getW()
-end
 
 --
+
+-- return one word
+elseif data == "onewd$" then
+    api.getOneWd()
+
+--
+
+
+-- return one word
+elseif data == "wnl$" then
+    api.wnl()
+
+--
+
+
+-- zhihu 
+elseif data == "zh$" then
+    api.zh()
+
+
+-- now ram
+elseif data == "ram$" then
+    uart.write(0,'t2.txt="' .. (collectgarbage("count")*1024) ..'"' ,0xff,0xff,0xff)
+
+-- collectgarbage 
+elseif data == "ljhs$" then
+    collectgarbage("collect")
+
+end
 
 end,0)
 end
