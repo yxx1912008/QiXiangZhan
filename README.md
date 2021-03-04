@@ -29,3 +29,6 @@
 
 
 ### 2.项目演示视频
+
+<video src="https://raw.githubusercontent.com/yxx1912008/QiXiangZhan/main/4.%E5%8E%9F%E5%9E%8B%E5%9B%BE%E7%89%87%E8%A7%86%E9%A2%91/showit.mp4" controls="controls" width="500" height="300">您的浏览器不支持播放该视频！</video>
+
