@@ -7,7 +7,11 @@
 ### 1.项目原材料
 
     1.基于乐鑫esp8266的NodeMcu开发板
-    
+
+![8266图片](https://raw.githubusercontent.com/yxx1912008/QiXiangZhan/main/4.%E5%8E%9F%E5%9E%8B%E5%9B%BE%E7%89%87%E8%A7%86%E9%A2%91/Esp8266-1.jpg)
+ 
+
+
 
 
 
