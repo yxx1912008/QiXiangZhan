@@ -8,10 +8,11 @@
 
     1.基于乐鑫esp8266的NodeMcu开发板
 
-![8266图片](https://raw.githubusercontent.com/yxx1912008/QiXiangZhan/main/4.%E5%8E%9F%E5%9E%8B%E5%9B%BE%E7%89%87%E8%A7%86%E9%A2%91/Esp8266-1.jpg)
- 
+<img src="https://raw.githubusercontent.com/yxx1912008/QiXiangZhan/main/4.%E5%8E%9F%E5%9E%8B%E5%9B%BE%E7%89%87%E8%A7%86%E9%A2%91/Esp8266-1.jpg" style="width: 50%; height: 50%"  alt="Esp8266正面" />
+<img src="https://raw.githubusercontent.com/yxx1912008/QiXiangZhan/main/4.%E5%8E%9F%E5%9E%8B%E5%9B%BE%E7%89%87%E8%A7%86%E9%A2%91/Esp8266-2.jpg" style="width: 50%; height: 50%"  alt="Esp8266反面面" />
 
 
+	2.一款淘晶驰的串口屏
 
 
 
