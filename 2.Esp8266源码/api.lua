@@ -5,9 +5,9 @@ api.sntp='203.107.6.88'
 api.full_time='%04d/%02d/%02d %02d:%02d:%02d'
 
 -- url
-api.wurl='http://api.seniverse.com/v3/weather/now.json?key=SdLPuilrOC2nzwIR6&location=Hangzhou'
+api.wurl='http://api.seniverse.com/v3/weather/now.json?key=&location=Hangzhou'
 api.ow='http://v1.alapi.cn/api/hitokoto'
-api.wnurl='http://v2.alapi.cn/api/lunar?token=9CeTvaTVnUatKEph'
+api.wnurl='http://v2.alapi.cn/api/lunar?token='
 api.zhurl='http://v1.alapi.cn/api/zhihu/latest'
 
 -- get weather
