@@ -5,7 +5,7 @@ local config={}
 -- wifi ssid
 config.wifiSsid='star'
 -- pwd
-config.wifiPwd='yxx19912008'
+config.wifiPwd=''
 
 function flash()
     local st=gpio.read(4)
